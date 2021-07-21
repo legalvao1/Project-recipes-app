@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -30,32 +29,33 @@ class ExploreDrinks extends Component {
     return (
       drinkRandom[0]
         ? (
-          <>
-            <section>
+          <div className="page">
+            <div className="perfil-container">
               <Header title="Explorar Bebidas" searchIcon />
               <div className="explore-buttons">
                 <Link to="/explorar/bebidas/ingredientes">
-                  <Button
-                    className="buttons"
+                  <button
+                    className="buttons-explore"
                     type="button"
                     data-testid="explore-by-ingredient"
                   >
                     Por Ingredientes
-                  </Button>
+                  </button>
                 </Link>
                 <Link to={ `/bebidas/${drinkRandom[0].idDrink}` }>
-                  <Button
-                    className="buttons"
+                  <button
+                    className="buttons-explore"
                     type="button"
                     data-testid="explore-surprise"
                   >
                     Me Surpreenda!
-                  </Button>
+                  </button>
                 </Link>
               </div>
-            </section>
-            <Footer />
-          </>
+
+              <Footer />
+            </div>
+          </div>
         )
         : null
     );
