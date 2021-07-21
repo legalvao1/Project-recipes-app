@@ -4,6 +4,7 @@
 }
 
 .cards-container {
+  align-items: center;
   background-color: #f3ecec;
   display: flex;
   flex-wrap: wrap;
