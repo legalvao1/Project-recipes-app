@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { fetchCategorieFoodFilterAction,
   fetchFoodAction } from '../actions';
 
+import '../css/Buttons.css';
+
 class FoodButtons extends Component {
   constructor(props) {
     super(props);
@@ -59,9 +61,10 @@ class FoodButtons extends Component {
   render() {
     const { categories } = this.state;
     return (
-      <div>
+      <div className="buttons-container">
         {categories.map(({ strCategory }, index) => (
           <button
+            className="buttons-category"
             data-testid={ `${strCategory}-category-filter` }
             type="button"
             key={ index }
@@ -73,6 +76,7 @@ class FoodButtons extends Component {
           </button>
         ))}
         <button
+          className="buttons-category"
           type="button"
           data-testid="All-category-filter"
           onClick={ () => this.handleClickAll() }

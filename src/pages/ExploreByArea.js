@@ -7,6 +7,8 @@ import { fetchFoodAction } from '../actions';
 import { fetchAreaAction,
   fetchRecipesFoodAreaAction } from '../actions/ingredientsActions';
 import FoodCard from '../components/FoodCard';
+import '../css/Page.css';
+import '../css/Card.css';
 
 class ExploreByArea extends Component {
   constructor(props) {
@@ -48,35 +50,36 @@ class ExploreByArea extends Component {
     const { getFoodArea } = this.props;
     const { area } = this.state;
     return (
-      <select
-        data-testid="explore-by-area-dropdown"
-        id="area"
-        value={ area }
-        onChange={ (e) => this.filtraArea(e.target.value) }
-      >
-        { getFoodArea.map((result, index) => (
-          <option
-            key={ index }
-            value={ result.strArea }
-            data-testid={ `${result.strArea}-option` }
-          >
-            { result.strArea }
-          </option>
-        ))}
-      </select>
-    );
+      <div className="select-div">
+        <select
+          data-testid="explore-by-area-dropdown"
+          id="area"
+          value={ area }
+          onChange={ (e) => this.filtraArea(e.target.value) }
+        >
+          { getFoodArea.map((result, index) => (
+            <option
+              key={ index }
+              value={ result.strArea }
+              data-testid={ `${result.strArea}-option` }
+            >
+              { result.strArea }
+            </option>
+          ))}
+        </select>
+      </div>);
   }
 
   render() {
     return (
-      <>
-        <section>
-          <Header title="Explorar Origem" />
-          {this.renderizaArea()}
-        </section>
-        <FoodCard />
+      <div className="page">
+        <Header title="Explorar Origem" />
+        {this.renderizaArea()}
+        <div className="cards-container">
+          <FoodCard />
+        </div>
         <Footer />
-      </>
+      </div>
     );
   }
 }

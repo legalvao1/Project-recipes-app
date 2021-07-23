@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import '../css/Buttons.css';
+
 class FavoriteRecipesButtons extends Component {
   render() {
     const { statusButton } = this.props;
     return (
-      <div>
+      <div className="buttons-container">
         <button
+          className="buttons-category"
           type="button"
           data-testid="filter-by-all-btn"
           onClick={ (e) => statusButton(e) }
@@ -14,6 +17,7 @@ class FavoriteRecipesButtons extends Component {
           All
         </button>
         <button
+          className="buttons-category"
           type="button"
           data-testid="filter-by-food-btn"
           onClick={ (e) => statusButton(e) }
@@ -21,6 +25,7 @@ class FavoriteRecipesButtons extends Component {
           Food
         </button>
         <button
+          className="buttons-category"
           type="button"
           data-testid="filter-by-drink-btn"
           onClick={ (e) => statusButton(e) }

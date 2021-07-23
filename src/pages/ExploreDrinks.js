@@ -6,6 +6,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { fetchDrinkRandom } from '../actions/index';
 
+import '../css/Buttons.css';
+
 class ExploreDrinks extends Component {
   constructor() {
     super();
@@ -27,28 +29,33 @@ class ExploreDrinks extends Component {
     return (
       drinkRandom[0]
         ? (
-          <>
-            <section>
+          <div className="page">
+            <div className="perfil-container">
               <Header title="Explorar Bebidas" searchIcon />
-              <Link to="/explorar/bebidas/ingredientes">
-                <button
-                  type="button"
-                  data-testid="explore-by-ingredient"
-                >
-                  Por Ingredientes
-                </button>
-              </Link>
-              <Link to={ `/bebidas/${drinkRandom[0].idDrink}` }>
-                <button
-                  type="button"
-                  data-testid="explore-surprise"
-                >
-                  Me Surpreenda!
-                </button>
-              </Link>
-            </section>
-            <Footer />
-          </>
+              <div className="explore-buttons">
+                <Link to="/explorar/bebidas/ingredientes">
+                  <button
+                    className="buttons-explore"
+                    type="button"
+                    data-testid="explore-by-ingredient"
+                  >
+                    Por Ingredientes
+                  </button>
+                </Link>
+                <Link to={ `/bebidas/${drinkRandom[0].idDrink}` }>
+                  <button
+                    className="buttons-explore"
+                    type="button"
+                    data-testid="explore-surprise"
+                  >
+                    Me Surpreenda!
+                  </button>
+                </Link>
+              </div>
+
+              <Footer />
+            </div>
+          </div>
         )
         : null
     );

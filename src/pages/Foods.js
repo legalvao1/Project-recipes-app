@@ -27,14 +27,14 @@ class Foods extends Component {
   render() {
     const { resultFood } = this.props;
     return (
-      <>
-        <section>
-          <Header title="Comidas" />
-        </section>
+      <div className="page">
+        <Header title="Comidas" />
         <FoodButtons />
-        {resultFood ? <FoodCard /> : null}
+        <div className="cards-container">
+          {resultFood ? <FoodCard /> : null}
+        </div>
         <Footer />
-      </>
+      </div>
     );
   }
 }

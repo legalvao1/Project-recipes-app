@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../css/Login.css';
+import src from '../images/recipes.png';
 
 class Login extends React.Component {
   constructor() {
@@ -36,39 +38,42 @@ class Login extends React.Component {
     };
 
     return (
-      <div className="login">
-        <label htmlFor="email">
-          <input
-            type="email"
-            className="title1"
-            placeholder="E-mail"
-            data-testid="email-input"
-            name="email"
-            onChange={ this.handleChange }
-          />
-        </label>
-        <br />
-        <label htmlFor="senha">
-          <input
-            type="password"
-            className="title"
-            placeholder="Senha"
-            data-testid="password-input"
-            name="senha"
-            onChange={ this.handleChange }
-          />
-        </label>
-        <br />
-        <button
-          type="button"
-          data-testid="login-submit-btn"
-          className="btnLogin"
-          disabled={ verificaBotao }
-          onClick={ checkLogin }
-        >
-          {' '}
-          ENTRAR
-        </button>
+      <div className="login-container">
+        <div className="login">
+          <img src={ src } alt="" />
+
+          <label htmlFor="email">
+            <input
+              type="email"
+              className="title1"
+              placeholder="E-mail"
+              data-testid="email-input"
+              name="email"
+              onChange={ this.handleChange }
+            />
+          </label>
+          <label htmlFor="senha">
+            <input
+              type="password"
+              className="title"
+              placeholder="Senha"
+              data-testid="password-input"
+              name="senha"
+              onChange={ this.handleChange }
+            />
+          </label>
+
+          <button
+            type="button"
+            data-testid="login-submit-btn"
+            className="btnLogin"
+            disabled={ verificaBotao }
+            onClick={ checkLogin }
+          >
+            {' '}
+            ENTRAR
+          </button>
+        </div>
       </div>
     );
   }

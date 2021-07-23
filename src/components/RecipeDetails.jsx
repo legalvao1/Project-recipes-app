@@ -12,6 +12,8 @@ import {
   getFavoriteRecipes,
   removeFavoriteRecipe } from './RecipeDetailsFunc';
 
+import '../css/Buttons.css';
+
 class RecipeDetails extends React.Component {
   constructor(props) {
     super(props);
@@ -47,8 +49,12 @@ class RecipeDetails extends React.Component {
       return ingredientes.map((ingrediente, index) => {
         if (ingrediente && apenasMedidas[index]) {
           return (
-            <li key={ index } data-testid={ `${index}-ingredient-name-and-measure` }>
-              {`${ingrediente[1]}-${apenasMedidas[index]}`}
+            <li
+              key={ index }
+              className=""
+              data-testid={ `${index}-ingredient-name-and-measure` }
+            >
+              {`${ingrediente[1]} - ${apenasMedidas[index]}`}
             </li>);
         }
         return null;
@@ -83,10 +89,10 @@ class RecipeDetails extends React.Component {
     return (
       <div>
         <button
+          className="button-start-recipe"
           type="button"
           data-testid="start-recipe-btn"
           onClick={ () => this.setState({ redirectInProgress: true }) }
-          className="button"
         >
           { btnMessage }
         </button>
@@ -96,7 +102,7 @@ class RecipeDetails extends React.Component {
 
   renderRecommendedCard(recipes) {
     return (
-      <div>
+      <div className="recipe-details-recommended">
         <h4>Recomendadas</h4>
         <div className="card-list">
           <RecomendedCard recipes={ recipes } />
@@ -109,66 +115,77 @@ class RecipeDetails extends React.Component {
     const { title, recipes, btnVisible, btnMessage } = this.props;
     const { copied, favorite } = this.state;
     return (
-      <section>
-        <div>
-          <img
-            data-testid="recipe-photo"
-            src={ recipeDetails[0].strMealThumb || recipeDetails[0].strDrinkThumb }
-            alt={ recipeDetails[0].strMeal || recipeDetails[0].strDrink }
-            width="250px"
-          />
-          <h1 data-testid="recipe-title">
+
+      <div className="recipe-details">
+        <img
+          className="recipe-img"
+          data-testid="recipe-photo"
+          src={ recipeDetails[0].strMealThumb || recipeDetails[0].strDrinkThumb }
+          alt={ recipeDetails[0].strMeal || recipeDetails[0].strDrink }
+          width="250px"
+        />
+
+        <div className="recipe-details-titles">
+          <h2 data-testid="recipe-title">
             { recipeDetails[0].strMeal || recipeDetails[0].strDrink }
-          </h1>
-          <div>
-            <span data-testid="recipe-category">
-              { recipeDetails[0].strAlcoholic }
-            </span>
-          </div>
-          <button
-            data-testid="share-btn"
-            type="button"
-            onClick={ this.copyLink }
-          >
-            <img src={ shareIcon } alt="shareIcon" />
-          </button>
-          <button
-            type="button"
-            onClick={ () => this.verifyFavorite(recipeDetails[0]) }
-          >
-            <img
-              data-testid="favorite-btn"
-              src={ favorite ? black : white }
-              alt="favoriteIcon"
-            />
-          </button>
-          {copied ? <span>Link copiado!</span> : null}
-          <div>
-            <span data-testid="recipe-category">{ recipeDetails[0].strCategory }</span>
+          </h2>
+          <div className="recipe-details-links">
+            <button
+              className="like-and-share"
+              data-testid="share-btn"
+              type="button"
+              onClick={ this.copyLink }
+            >
+              <img src={ shareIcon } alt="shareIcon" />
+            </button>
+
+            <button
+              className="like-and-share"
+              type="button"
+              onClick={ () => this.verifyFavorite(recipeDetails[0]) }
+            >
+              <img
+                data-testid="favorite-btn"
+                src={ favorite ? black : white }
+                alt="favoriteIcon"
+              />
+            </button>
+            {copied ? <span>Link copiado!</span> : null}
+
           </div>
         </div>
-        <div>
+        <div className="recipe-details-subtitles">
+          <span data-testid="recipe-category">
+            { recipeDetails[0].strAlcoholic }
+          </span>
+        </div>
+        <div className="recipe-details-subtitles">
+          <span data-testid="recipe-category">{ recipeDetails[0].strCategory }</span>
+        </div>
+        <div className="recipe-details-ingredients">
           <h4>Ingredientes</h4>
-          {this.getIngredients()}
-          <ul />
+          <ul>
+            {this.getIngredients()}
+          </ul>
         </div>
-        <div>
+        <div className="recipe-details-instructions">
           <h4>Instruções</h4>
           <p data-testid="instructions">{ recipeDetails[0].strInstructions }</p>
         </div>
         {title === 'Bebidas' ? null
           : (
-            <div>
-              <h4>Video</h4>
+            <div className="recipe-details-video">
+              <h4>Vídeo</h4>
               <iframe
                 data-testid="video"
                 title={ recipeDetails[0].strMeal || recipeDetails[0].strDrink }
-                src={ recipeDetails[0].strYoutube }
+                // Source https://developers.google.com/youtube/player_parameters?hl=pt-br
+                src={ recipeDetails[0].strYoutube.replace('watch?v=', 'embed/') }
               />
             </div>)}
         {this.renderRecommendedCard(recipes)}
         {btnVisible ? this.renderButton(btnMessage) : null }
-      </section>
+      </div>
     );
   }
 

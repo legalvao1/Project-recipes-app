@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import RecipeDetails from '../components/RecipeDetails';
 import { fetchDrinkIdAction, fetchFoodAction } from '../actions';
+import '../css/Page.css';
 
 class bebidas extends Component {
   constructor() {
@@ -52,18 +53,19 @@ class bebidas extends Component {
     const { recipeDetails, recipes, match: { params: { bebidaId } } } = this.props;
     return (
       recipeDetails && recipes ? (
-        <section>
-          <h3>Detalhes Bebida</h3>
-          <RecipeDetails
-            recipeDetails={ recipeDetails }
-            title="Bebidas"
-            recipes={ recipes }
-            link={ pathname }
-            id={ bebidaId }
-            btnVisible={ btnVisible }
-            btnMessage={ btnMessage }
-          />
-        </section>
+        <div className="page">
+          <div className="recipe-container">
+            <RecipeDetails
+              recipeDetails={ recipeDetails }
+              title="Bebidas"
+              recipes={ recipes }
+              link={ pathname }
+              id={ bebidaId }
+              btnVisible={ btnVisible }
+              btnMessage={ btnMessage }
+            />
+          </div>
+        </div>
       )
         : null
     );

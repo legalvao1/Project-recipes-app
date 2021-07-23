@@ -1,0 +1,167 @@
+.buttons-container {
+  background-color: #f3ecec;
+  padding-top: 10px;
+  text-align: center;
+  width: 350px;
+}
+
+.buttons {
+  background-color: rgb(228, 204, 204);
+  border: rgb(228, 204, 204);
+  height: 50px;
+  line-height: 1em;
+  margin: 1px;
+  width: 115px;
+}
+
+.buttons-category {
+  background-color: rgb(228, 204, 204);
+  border: rgb(228, 204, 204);
+  border-radius: 8px;
+  color: black;
+  height: 45px;
+  line-height: 1em;
+  margin: 7px;
+  width: 150px;
+}
+
+.buttons-category:hover {
+  background-color: #e7b2b2;
+}
+
+.buttons-category:focus {
+  background-color: #e38c8c;
+  outline: none;
+}
+
+.button-recipes-done {
+  background-color: rgb(228, 204, 204);
+  border: rgb(228, 204, 204);
+  border-radius: 8px;
+  color: black;
+  height: 65px;
+  line-height: 1em;
+  margin: 15px;
+  width: 300px;
+}
+
+.button-recipes-done:hover {
+  background-color: #e7b2b2;
+}
+
+.button-recipes-done:focus {
+  background-color: #e38c8c;
+  outline: none;
+}
+
+.buttons-explore-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons-explore {
+  background-color: rgb(228, 204, 204);
+  border: rgb(228, 204, 204);
+  border-radius: 8px;
+  color: black;
+  height: 65px;
+  line-height: 1em;
+  margin: 15px;
+  width: 310px;
+}
+
+.buttons-explore:hover {
+  background-color: #e7b2b2;
+}
+
+.buttons-explore:focus {
+  background-color: #e38c8c;
+  outline: none;
+}
+
+.like-and-share {
+  align-items: center;
+  background-color: #f3ecec;
+  border: rgb(228, 204, 204);
+  height: 40px;
+  margin: 0;
+  padding: 0 10px;
+  text-align: center;
+  width: 80px;
+}
+
+.like-and-share:focus {
+  background-color: #f3ecec;
+  outline: none;
+}
+
+.like-and-share img {
+  height: 30px;
+  width: 30px;
+}
+
+.like-and-share-page {
+  align-items: center;
+  background-color: rgb(228, 204, 204);
+  border: rgb(228, 204, 204);
+  height: 30px;
+  margin: 6px;
+  padding: 0 10px;
+  text-align: center;
+  width: 30px;
+}
+
+.like-and-share-page2 {
+  align-items: center;
+  background-color: rgb(228, 204, 204);
+  border: rgb(228, 204, 204);
+  height: 30px;
+  margin: 6px;
+  padding: 0 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.like-and-share-page2:focus {
+  outline: none;
+}
+
+.like-and-share-page img {
+  height: 20px;
+  width: 20px;
+}
+
+.button-start-recipe {
+  background-color: rgb(228, 204, 204);
+  border: rgb(228, 204, 204);
+  border-radius: 8px;
+  bottom: 0;
+  color: black;
+  height: 65px;
+  left: 38%;
+  line-height: 1em;
+  margin: 15px 150px 15px 0;
+  position: fixed;
+  width: 310px;
+}
+
+.button-start-recipe:hover {
+  background-color: #e7b2b2;
+}
+
+.button-start-recipe:focus {
+  background-color: #f3ecec;
+  outline: none;
+}
+
+.button-end-recipe {
+  background-color: rgb(228, 204, 204);
+  border: rgb(228, 204, 204);
+  border-radius: 8px;
+  color: black;
+  height: 65px;
+  line-height: 1em;
+  margin: 0;
+  width: 310px;
+}
+

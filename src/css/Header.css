@@ -1,4 +1,37 @@
 .header {
+  background-color: #e4cccc;
   display: flex;
-  justify-content: space-around;
+  height: 50px;
+  justify-content: space-between;
+  width: 350px;
+}
+
+.header h2 {
+  margin-top: 5px;
+}
+
+.button-profile {
+  background: transparent;
+  border: #e4cccc;
+  border-radius: 0;
+}
+
+.button-search {
+  background: transparent;
+  border: #e4cccc;
+  border-radius: 0;
+}
+
+.button-search-invisible {
+  background: transparent;
+  border: none;
+  font-size: 0;
+}
+
+.explore-ingredients {
+  align-items: center;
+  display: flex;
+  font-size: 1.5em;
+  margin: 0;
+  margin-bottom: 5px;
 }
