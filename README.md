@@ -42,9 +42,9 @@ Para iniciar o desenvolvimento, é necessário clonar o repositório do GitHub, 
 ```shell
 cd "diretorio de sua preferencia"
 
-git clone git@github.com:legalvao1/
+git clone git@github.com:legalvao1/Project-recipes-app.git
 
-cd 
+cd Project-recipes-app
 
 npm install
 
