@@ -3,8 +3,10 @@
 ---
 
 ## Introdução
- Desenvolvemos um app de receitas, e nele será possível ver, buscar, filtrar, favoritar e acompanhar o processo de preparação de receitas e drinks!
+ Desenvolvemos um app de receitas, onde será possível ver, buscar, filtrar, favoritar e acompanhar o processo de preparação de receitas e drinks!
+ 
 A base de dados serão 2 APIs distintas, uma para comidas e outra para bebidas.
+
 O layout tem como foco dispositivos móveis, então todos os protótipos vão estar desenvolvidos em telas menores.
 
 ## APIs
