@@ -31,7 +31,20 @@ Nesse projeto, utilizamos
   - Trello para gerenciamento das tarefas
   - Além de habilidades de soft skills para o trabalho em equipe
 
+## Desenvolvimento
+
+![image](parte1.png)
+![image](parte2.png)
+![image](parte3.png)
 
 
+Para iniciar o desenvolvimento, é necessário clonar o repositório do GitHub, acessar o projeto Wallet e intalar as dependências:
+```shell
+cd "diretorio de sua preferencia"
 
+git clone git@github.com:legalvao1/
+
+cd 
+
+npm install
 
