@@ -31,7 +31,7 @@ Nesse projeto, utilizamos
   - A biblioteca React-Router
   - BootStrap
   - Trello para gerenciamento das tarefas
-  - Além de habilidades de soft skills para o trabalho em equipe
+  - Também praticamos soft skills com par-programming, daily meetings, reuniões via Zoom/ Discord, trabalho em equipe.
 
 ## Desenvolvimento
 
